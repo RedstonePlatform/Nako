@@ -163,9 +163,3 @@ Source/Assemblies/
 Source/Cloud/
 Source/Databases/
 /Source/Rosetta.Cloud/Configuration
-/src/.vs/Nako/v15/Server/sqlite3/storage.ide-wal
-/src/.vs/Nako/v15/Server/sqlite3/storage.ide-shm
-/src/.vs/Nako/v15/Server/sqlite3/storage.ide
-/src/.vs/Nako/v15/Server/sqlite3/db.lock
-/.vs/slnx.sqlite-journal
-/.vs/slnx.sqlite
