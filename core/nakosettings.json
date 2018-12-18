@@ -1,13 +1,13 @@
 ﻿{
-  "CoinTag": "==CoinTag==",
+  "CoinTag": "TXRD",
 
-  "ConnectionString": "mongodb://{CoinTag}-mongo",
+  "ConnectionString": "mongodb://127.0.0.1:27017",
 
   "RpcAccessPort": 5000,
   "RpcSecure": false,
-  "RpcDomain": "{CoinTag}-client",
-  "RpcUser": "rpcuser",
-  "RpcPassword": "rpcpassword",
+  "RpcDomain": "127.0.0.1",
+  "RpcUser": "harry",
+  "RpcPassword": "Pass123",
 
   "SyncApiPort": 9000,
   "SyncBlockchain": true,

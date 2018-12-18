@@ -8,6 +8,8 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Microsoft.Extensions.FileProviders;
+
 namespace Nako.Api
 {
     #region Using Directives
@@ -89,6 +91,7 @@ namespace Nako.Api
                               serv.Add(new ServiceDescriptor(typeof(IStorage), container.Resolve<IStorage>()));
 
                           })
+
                           .UseStartup<Startup>();
 
                         this.tracer.Trace("API", string.Format("Self host server running at {0}", url));
@@ -128,11 +131,25 @@ namespace Nako.Api
             // called by the runtime before the Configure method, below.
             public IServiceProvider ConfigureServices(IServiceCollection services)
             {
+
+
                 services.AddMvc()
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
                 });
+                services.AddCors(options =>
+                                            {
+                                                options.AddPolicy("AllowAll",
+                                                        b =>
+                                                         {
+                                                             b.AllowAnyOrigin()
+                                                              .AllowAnyMethod()
+                                                              .WithHeaders("authorization", "accept", "content-type", "origin")
+                                                              .AllowCredentials();
+                                                         });
+                                            });
+
 
                 // Create the container builder.
                 // asp.net core autofac builds its container at this stage, 
@@ -153,9 +170,16 @@ namespace Nako.Api
               IApplicationLifetime appLifetime)
             {
                 app.UseMvc();
+                app.UseCors("allowall");
+                // Shows UseCors with CorsPolicyBuilder.
+
+                app.UseSwaggerUi();
+                app.UseDefaultFiles();
+                app.UseStaticFiles();
+                app.UseSpa(builder => builder.Options.DefaultPage = "/index.html");
 
                 //app.UseSwagger();
-                app.UseSwaggerUi();
+
             }
         }
     }

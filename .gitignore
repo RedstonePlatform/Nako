@@ -163,3 +163,11 @@ Source/Assemblies/
 Source/Cloud/
 Source/Databases/
 /Source/Rosetta.Cloud/Configuration
+/src/.vs/Nako/v15/Server/sqlite3/db.lock
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/core/.vs/Nako.Core/v15/Server/sqlite3/storage.ide-wal
+/core/.vs/Nako.Core/v15/Server/sqlite3/storage.ide-shm
+/core/.vs/Nako.Core/v15/Server/sqlite3/storage.ide
+/core/.vs/Nako.Core/v15/Server/sqlite3/db.lock
+/core/.vs/Nako.Core/DesignTimeBuild/.dtbcache
