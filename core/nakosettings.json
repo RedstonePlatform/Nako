@@ -3,13 +3,13 @@
 
   "ConnectionString": "mongodb://127.0.0.1:27017",
 
-  "RpcAccessPort": 5000,
+  "RpcAccessPort": RPCPORTX,
   "RpcSecure": false,
-  "RpcDomain": "127.0.0.1",
+  "RpcDomain": "RPCBINDX",
   "RpcUser": "RPCUSERX",
   "RpcPassword": "RPCPASSX",
 
-  "SyncApiPort": 9000,
+  "SyncApiPort": SYNCAPIX,
   "SyncBlockchain": true,
   "SyncMemoryPool": true,
   "StartBlockIndex": 1,
