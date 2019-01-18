@@ -6,8 +6,8 @@
   "RpcAccessPort": 5000,
   "RpcSecure": false,
   "RpcDomain": "127.0.0.1",
-  "RpcUser": "harry",
-  "RpcPassword": "Pass123",
+  "RpcUser": "RPCUSERX",
+  "RpcPassword": "RPCPASSX",
 
   "SyncApiPort": 9000,
   "SyncBlockchain": true,
