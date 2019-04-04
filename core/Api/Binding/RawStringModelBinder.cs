@@ -8,15 +8,13 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace nako.core.Api.Binding
+namespace Nako.Api.Binding
 {
     #region Using Directives
 
     using System;
     using System.IO;
     using System.Threading.Tasks;
-
-    using Microsoft.AspNetCore.Mvc.Internal;
     using Microsoft.AspNetCore.Mvc.ModelBinding;
 
     #endregion

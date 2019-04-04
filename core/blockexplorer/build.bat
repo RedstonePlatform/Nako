@@ -1,3 +1,3 @@
 call yarn
 call yarn build
-xcopy /yS build ..\wwwroot
+xcopy /yS build ..\wwwroot\

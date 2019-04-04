@@ -26,6 +26,7 @@ namespace Nako.Api
     using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
+    using Swashbuckle.AspNetCore.Swagger;
 
     using Nako.Storage;
 
@@ -89,7 +90,6 @@ namespace Nako.Api
                               // todo: look in to injecting the container builder in to the api
                               serv.Add(new ServiceDescriptor(typeof(NakoConfiguration), container.Resolve<NakoConfiguration>()));
                               serv.Add(new ServiceDescriptor(typeof(IStorage), container.Resolve<IStorage>()));
-
                           })
 
                           .UseStartup<Startup>();
@@ -151,6 +151,12 @@ namespace Nako.Api
                                             });
 
 
+                services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new Info { Title = "Nako API", Version = "v1" });
+                });
+
+
                 // Create the container builder.
                 // asp.net core autofac builds its container at this stage, 
                 // because the Nako server depends on the container being built already, 
@@ -173,13 +179,16 @@ namespace Nako.Api
                 app.UseCors("allowall");
                 // Shows UseCors with CorsPolicyBuilder.
 
-                app.UseSwaggerUi();
                 app.UseDefaultFiles();
                 app.UseStaticFiles();
+               
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Nako API V1");
+                });
+
                 app.UseSpa(builder => builder.Options.DefaultPage = "/index.html");
-
-                //app.UseSwagger();
-
             }
         }
     }

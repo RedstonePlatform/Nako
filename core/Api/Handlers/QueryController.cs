@@ -39,6 +39,7 @@ namespace Nako.Api.Handlers
 
         #region Public Methods and Operators
 
+        [HttpGet]
         [Route("address/{address}/confirmations/{confirmations:long=0}/transactions")]
         public IActionResult GetAddressTransactions(string address, long confirmations)
         {
@@ -49,6 +50,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/confirmations/{confirmations:long=0}")]
         public IActionResult GetAddress(string address, long confirmations)
         {
@@ -59,6 +61,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/confirmations/{confirmations:long=0}/unspent/transactions")]
         public IActionResult GetAddressUtxoTransactions(string address, long confirmations)
         {
@@ -69,6 +72,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/confirmations/{confirmations:long=0}/unspent")]
         public IActionResult GetAddressUtxo(string address, long confirmations)
         {
@@ -79,6 +83,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/confirmations/{confirmations:long=0}/unspent/confirmed")]
         public IActionResult GetAddressUtxoConfirmedTransactions(string address, long confirmations)
         {
@@ -89,6 +94,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/confirmations/{confirmations:long}/unspent/unconfirmed")]
         public IActionResult GetAddressUtxoUnconfirmedTransactions(string address, long confirmations)
         {
@@ -99,6 +105,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/unspent")]
         public IActionResult GetAddressUtxo(string address)
         {
@@ -109,6 +116,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}")]
         public IActionResult GetAddress(string address)
         {
@@ -119,6 +127,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/unspent/transactions")]
         public IActionResult GetAddressUtxoTransactions(string address)
         {
@@ -129,6 +138,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("address/{address}/transactions")]
         public IActionResult GetAddressTransactions(string address)
         {
@@ -139,6 +149,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("block/Latest/{transactions?}")]
         public IActionResult GetBlock(string transactions = null)
         {
@@ -154,6 +165,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("block/{blockHash}/{transactions?}")]
         public IActionResult GetBlockByHash(string blockHash, string transactions = null)
         {
@@ -169,6 +181,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("block/Index/{blockIndex}/{transactions?}")]
         public IActionResult GetBlockByHash(long blockIndex, string transactions = null)
         {
@@ -184,6 +197,7 @@ namespace Nako.Api.Handlers
             return response;
         }
 
+        [HttpGet]
         [Route("transaction/{transactionId}")]
         public IActionResult GetTransaction(string transactionId)
         {

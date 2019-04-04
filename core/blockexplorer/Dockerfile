@@ -1,5 +1,7 @@
 FROM node:10.3.0 as build-dependencies
 
+# Note this is for a standalone instance of the blockexplorer in its own docker container
+
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
